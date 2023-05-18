@@ -4,18 +4,28 @@ import "./field.css";
 import SearchIcon from "../svg/SearchIcon";
 import CloseIcon from "../svg/CloseIcon";
 
-export const Field = ({ 
-  searchBar, 
-  label, 
-  value,
+export const Field = ({
+  searchBar,
+  label,
+  value: initialValue,
   onChange,
-  onClick,
   ...props
 }) => {
-  const handleChange = (event) => {
+  const [value, setValue] = React.useState(initialValue);
+
+  const updateValue = (value) => {
     if (onChange) {
-      onChange(event.target.value);
+      onChange(value);
     }
+    setValue(value);
+  };
+
+  const handleChange = (event) => {
+    updateValue(event.target.value);
+  };
+
+  const handleClick = () => {
+    updateValue("");
   };
 
   const modeSearchBar = searchBar ? "modeSearchBar" : "iconWrapperHidden";
@@ -23,7 +33,7 @@ export const Field = ({
   return (
     <div className="search">
       <div className={modeSearchBar}>
-        <SearchIcon className="iconSearch"/>
+        <SearchIcon className="iconSearch" />
       </div>
       <input
         className="input"
@@ -32,11 +42,10 @@ export const Field = ({
         value={value}
         {...props}
       />
-      <button className={modeCloseIcon} onClick={onClick}>
+      <button className={modeCloseIcon} onClick={handleClick}>
         <CloseIcon />
       </button>
     </div>
-    
   );
 };
 

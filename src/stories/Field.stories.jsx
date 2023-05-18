@@ -4,12 +4,7 @@ import { Field as FieldComponent } from "../components/Field/Field";
 const FieldExample = (props) => {
   const [value, setValue] = React.useState("");
 
-  return <FieldComponent 
-    value={value} 
-    onChange={setValue}
-    onClick={() => setValue("")} 
-    {...props} 
-  />;
+  return <FieldComponent value={value} onChange={setValue} {...props} />;
 };
 
 export default {
