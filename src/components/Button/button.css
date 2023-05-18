@@ -1,0 +1,27 @@
+.button {
+  font-family: CircularSp, CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl,
+    CircularSp-Grek, CircularSp-Deva, var(--fallback-fonts, sans-serif),
+    sans-serif;
+  font-weight: 700;
+  border: 0;
+  border-radius: 500px;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+  min-block-size: 32px;
+  padding-inline: 16px;
+}
+
+.button:hover {
+  transform: scale(1.04);
+}
+
+.button--primary {
+  color: black;
+  background-color: white;
+}
+.button--secondary {
+  color: white;
+  background-color: rgba(0,0,0,0.54);
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+}

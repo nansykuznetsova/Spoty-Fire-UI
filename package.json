@@ -1,0 +1,39 @@
+{
+  "name": "spoty-fire-ui",
+  "version": "1.0.0",
+  "description": "A simple react component collection",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nansykuznetsova/Spoty-Fire-UI.git"
+  },
+  "author": "Anastasiia Kuznetsova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nansykuznetsova/Spoty-Fire-UI/issues"
+  },
+  "homepage": "https://github.com/nansykuznetsova/Spoty-Fire-UI#readme",
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.0.12",
+    "@storybook/addon-interactions": "^7.0.12",
+    "@storybook/addon-links": "^7.0.12",
+    "@storybook/blocks": "^7.0.12",
+    "@storybook/react": "^7.0.12",
+    "@storybook/react-vite": "^7.0.12",
+    "@storybook/testing-library": "^0.1.0",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "^7.0.12"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
+ 
