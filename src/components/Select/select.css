@@ -1,0 +1,59 @@
+.selectTab {
+  display: inline-flex;
+  background-color: #121212;
+  border-radius: 5px;
+}
+
+.buttonSelect {
+  color: #b3b3b3;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  align-items: center;
+  background-color: transparent;
+  border-radius: 4px;
+  display: flex;
+  height: 32px;
+  padding: 0.75rem 0.5rem 0.75rem 0.75rem;
+  justify-content: space-around;
+  width: 100%;
+  gap: 10px;
+}
+
+.buttonSelect:hover {
+  color: #fff;
+}
+
+.options {
+  margin: 0;
+  padding: 4px;
+  list-style-type: none;
+  background-color: #282828;
+  border-radius: 5px;
+  position: absolute;
+  color: #fff;
+}
+
+.optionsItem {
+  margin: 0;
+  padding: 0;
+}
+
+.optionsButton {
+  background: transparent;
+  border: 0;
+  border-radius: 2px;
+  color: hsla(0, 0%, 100%, 0.9);
+  cursor: pointer;
+  text-align: start;
+  padding: 0.75rem 0.5rem 0.75rem 0.75rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  
+}
+
+.optionsButtonCurrent {
+  color: #1ed760;
+}
