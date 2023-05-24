@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './button.css';
 
 export const Button = ({ primary, backgroundColor, label, ...props }) => {
-  const mode = primary ? 'button--primary' : 'button--secondary';
+  const mode = primary ? 'buttonPrimary' : 'buttonSecondary';
   return (
     <button
       type="button"

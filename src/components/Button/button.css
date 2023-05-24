@@ -16,12 +16,12 @@
   transform: scale(1.04);
 }
 
-.button--primary {
+.buttonPrimary {
   color: black;
   background-color: white;
 }
-.button--secondary {
+.buttonSecondary {
   color: white;
-  background-color: rgba(0,0,0,0.54);
+  background-color: #282828;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
 }

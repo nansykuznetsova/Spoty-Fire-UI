@@ -10,6 +10,7 @@ const FieldExample = (props) => {
 export default {
   title: "Field",
   component: FieldExample,
+  tags: ['autodocs'],
 };
 
 export const Field = {
