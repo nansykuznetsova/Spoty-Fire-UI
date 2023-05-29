@@ -30,12 +30,6 @@ Navigate to the project's root directory using the terminal and install the requ
 npm install
 ```
 
-or if you prefer using yarn:
-
-```bash
-yarn install
-```
-
 This command will install all the necessary dependencies defined in the `package.json` file.
 
 ### Starting Storybook
@@ -44,12 +38,6 @@ Once the dependencies are installed, you can start the Storybook development ser
 
 ```bash
 npm run storybook
-```
-
-or
-
-```bash
-yarn storybook
 ```
 
 The development server will start and you should see the Storybook UI running at `http://localhost:6006` in your browser.
