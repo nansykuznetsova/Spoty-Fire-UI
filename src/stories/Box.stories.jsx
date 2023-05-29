@@ -1,8 +1,8 @@
-import { Container } from "../components/Container/Container";
+import { Box } from "../components/Box/Box";
 
 export default {
-  title: "Container",
-  component: Container,
+  title: "Box",
+  component: Box,
   tags: ['autodocs'],
 };
 

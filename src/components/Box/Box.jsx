@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import './container.css';
+import './box.css';
 
-export const Container = ({backgroundColor, primary, label, ...props }) => {
+export const Box = ({backgroundColor, primary, label, ...props }) => {
   const mode = primary ? 'containerPrimary' : 'containerSecondary';
   return (
     <div
@@ -14,12 +14,12 @@ export const Container = ({backgroundColor, primary, label, ...props }) => {
   );
 };
 
-Container.propTypes = {
+Box.propTypes = {
   primary: PropTypes.bool,
   backgroundColor: PropTypes.string,
 };
 
-Container.defaultProps = {
+Box.defaultProps = {
   backgroundColor: null,
   primary: false,
 };
