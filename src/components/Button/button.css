@@ -16,12 +16,23 @@
   transform: scale(1.04);
 }
 
-.buttonPrimary {
+.primary {
   color: black;
   background-color: white;
 }
-.buttonSecondary {
+
+.secondary {
   color: white;
   background-color: #282828;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+}
+
+.outlined {
+  color: white;
+  background-color: transparent;
+  border: 1px solid #727272;
+}
+
+.outlined:hover {
+  border-color: #fff;
 }

@@ -2,13 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './button.css';
 
-export const Button = ({ primary, backgroundColor, label, ...props }) => {
-  const mode = primary ? 'buttonPrimary' : 'buttonSecondary';
+export const Button = ({ variant = "primary", label, ...props }) => {
   return (
     <button
       type="button"
-      className={['button', mode].join(' ')}
-      style={backgroundColor && { backgroundColor }}
+      className={`button ${variant}`}
       {...props}
     >
       {label}
@@ -17,14 +15,12 @@ export const Button = ({ primary, backgroundColor, label, ...props }) => {
 };
 
 Button.propTypes = {
-  primary: PropTypes.bool,
-  backgroundColor: PropTypes.string,
+  variant: PropTypes.string,
   label: PropTypes.string.isRequired,
   onClick: PropTypes.func,
 };
 
 Button.defaultProps = {
-  backgroundColor: null,
-  primary: false,
-  onClick: undefined,
+  variant: "primary",
+  onClick: () => {},
 };

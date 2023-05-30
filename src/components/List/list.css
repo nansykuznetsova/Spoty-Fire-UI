@@ -2,16 +2,13 @@
   margin: 0;
   padding: 0;
   list-style-type: none;
-  border-radius: 5px;
   box-sizing: border-box;
   color: #fff;
-  border-radius: 8px;
-  background-color: #282828;
 }
 
 .listItem {
   margin: 0;
-  padding: 0;
+  padding: 0 16px;
   border: 1px solid transparent;
   height: 56px;
   position: relative;
@@ -19,17 +16,21 @@
   align-items: center;
   justify-content: space-between;
   background-color: transparent;
+  border-radius: 4px;
+}
+
+.listItem:hover {
+  background-color: hsla(0, 0%, 100%, 0.1);
 }
 
 .imgItem {
-  margin: 0 16px;
+  margin-right: 16px;
 }
 
 .item {
   display: flex;
   justify-content: space-around;
   align-items: center;
-
 }
 
 .nameItem {
@@ -41,5 +42,5 @@
 }
 
 span {
-  color: #B3B3B3;
+  color: #b3b3b3;
 }
