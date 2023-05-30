@@ -24,7 +24,7 @@ export const ListItem = ({ title, artists, album, img, ...props }) => {
           </span>
         </div>
       </div>
-      <Button label="Add" />
+      <Button label="Add" variant="outlined" onClick={() => { console.log('Add item') }}/>
     </li>
   )
 }
