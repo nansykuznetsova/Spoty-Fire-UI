@@ -48,7 +48,6 @@ The project structure follows a typical React component library structure. Here'
 
 - `src/`: Contains the source code for the React components.
 - `stories/`: Contains the story files for each component. Story files are used to define the different states and variations of a component.
-- `public/`: Contains public assets such as images or fonts.
 - `storybook/`: Contains the Storybook configuration files.
 - `package.json`: Lists the project's dependencies and defines the available scripts.
 
