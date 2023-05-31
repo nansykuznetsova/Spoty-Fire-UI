@@ -28,12 +28,12 @@ export const Field = ({
     updateValue("");
   };
 
-  const modeSearchBar = searchBar ? "modeSearchBar" : "iconWrapperHidden";
-  const modeCloseIcon = value ? "modeCloseIcon" : "iconWrapperHidden";
+  const modeSearchBar = searchBar ? "mode-search-bar" : "icon-wrapper-hidden";
+  const modeCloseIcon = value ? "mode-close-icon" : "icon-wrapper-hidden";
   return (
     <div className="search">
       <div className={modeSearchBar}>
-        <SearchIcon className="iconSearch" />
+        <SearchIcon className="icon-search" />
       </div>
       <input
         className="input"

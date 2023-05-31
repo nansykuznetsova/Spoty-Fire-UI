@@ -4,12 +4,13 @@ import PropTypes from 'prop-types';
 import { Button } from '../Button/Button';
 import './header.css';
 
-export const Header = ({ user, onLogin, onLogout }) => (
+export const Header = ({ logo, user, onLogin, onLogout }) => (
   <header>
     <div className="header">
-      <div>
-        <h1>Spoty-Fire</h1>
-      </div>
+      {typeof logo === "string" 
+        ? (<h1  className="string-logo">{logo}</h1>)
+        : <div className="logo">{logo}</div>
+      }
       <div>
         {user ? (
           <>
@@ -32,6 +33,10 @@ Header.propTypes = {
   user: PropTypes.shape({
     name: PropTypes.string.isRequired,
   }),
+  logo: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.elementType
+  ]),
   onLogin: PropTypes.func.isRequired,
   onLogout: PropTypes.func.isRequired,
 };

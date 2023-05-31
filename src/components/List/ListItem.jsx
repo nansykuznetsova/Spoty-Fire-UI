@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import './list.css';
 import { Button } from '../Button/Button';
 
-export const ListItem = ({ title, artists, album, img, ...props }) => {
+export const ListItem = ({ label, title, artists, album, img, ...props }) => {
   return (
-    <li className="listItem" {...props}>
+    <li className="list-item" {...props}>
       <div className="item">
         <img
           aria-hidden="false" 
@@ -15,25 +15,31 @@ export const ListItem = ({ title, artists, album, img, ...props }) => {
           alt="" 
           width="40" 
           height="40"
-          className="imgItem"
+          className="img-item"
         />
-        <div className="nameItem">
+        <div className="name-item">
           {title}
           <span>
             {artists.map((artist) => artist.name).join(", ")} | {album}
           </span>
         </div>
       </div>
-      <Button label="Add" variant="outlined" onClick={() => { console.log('Add item') }}/>
+      {label 
+        ? <Button label={label} variant="outlined" onClick={() => { console.log('Add item') }}/> 
+        : null
+      }
+      
     </li>
   )
 }
 
 ListItem.propTypes = {
+  label: PropTypes.string,
   title: PropTypes.string,
   artists: PropTypes.array,
   album: PropTypes.string,
   img: PropTypes.object,
+  onClick: PropTypes.func,
 };
 
 ListItem.defaultProps = {
@@ -41,4 +47,5 @@ ListItem.defaultProps = {
   artists: [],
   album: "",
   img: {},
+  onClick: () => {},
 };

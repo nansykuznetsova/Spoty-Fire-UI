@@ -1,10 +1,10 @@
-.selectTab {
+.select-tab {
   display: inline-flex;
   background-color: #121212;
   border-radius: 5px;
 }
 
-.buttonSelect {
+.button-select {
   color: #b3b3b3;
   cursor: pointer;
   outline: none;
@@ -20,7 +20,7 @@
   gap: 10px;
 }
 
-.buttonSelect:hover {
+.button-select:hover {
   color: #fff;
 }
 
@@ -34,12 +34,12 @@
   color: #fff;
 }
 
-.optionsItem {
+.options-item {
   margin: 0;
   padding: 0;
 }
 
-.optionsButton {
+.options-button {
   background: transparent;
   border: 0;
   border-radius: 2px;
@@ -54,6 +54,6 @@
   
 }
 
-.optionsButtonCurrent {
+.options-button-current {
   color: #1ed760;
 }

@@ -6,7 +6,7 @@
   color: #fff;
 }
 
-.listItem {
+.list-item {
   margin: 0;
   padding: 0 16px;
   border: 1px solid transparent;
@@ -19,11 +19,11 @@
   border-radius: 4px;
 }
 
-.listItem:hover {
+.list-item:hover {
   background-color: hsla(0, 0%, 100%, 0.1);
 }
 
-.imgItem {
+.img-item {
   margin-right: 16px;
 }
 
@@ -33,7 +33,7 @@
   align-items: center;
 }
 
-.nameItem {
+.name-item {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;

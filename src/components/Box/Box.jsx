@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './box.css';
 
 export const Box = ({backgroundColor, primary, label, ...props }) => {
-  const mode = primary ? 'containerPrimary' : 'containerSecondary';
+  const mode = primary ? 'container-primary' : 'container-secondary';
   return (
     <div
       className={['container', mode].join(' ')}
