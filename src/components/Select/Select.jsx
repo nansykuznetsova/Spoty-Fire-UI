@@ -34,10 +34,10 @@ export const Select = ({ label, list, onChange }) => {
 
   return (
     <React.Fragment>
-      <div className="selectTab">
+      <div className="select-tab">
         <button 
           type="button" 
-          className="buttonSelect"
+          className="button-select"
           onClick={handleClick}
         >
           {currentItem.label}
@@ -46,10 +46,10 @@ export const Select = ({ label, list, onChange }) => {
       </div>
       <ul className="options" style={{ display }}>
         {list.map((item) => (
-          <li key={item.id} className="optionsItem">
+          <li key={item.id} className="options-item">
             <button 
               type="button"
-              className={["optionsButton", (item.id === currentItem.id ? "optionsButtonCurrent" : null)].join(" ")}
+              className={["options-button", (item.id === currentItem.id ? "options-button-current" : null)].join(" ")}
               onClick={() => handleClickOption(item)}
             >
              {item.label}

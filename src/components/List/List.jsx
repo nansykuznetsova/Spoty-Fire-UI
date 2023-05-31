@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './list.css';
 import { ListItem } from './ListItem';
 
-export const List = ({ list }) => {
+export const List = ({ list, label }) => {
   return (
     <ul className="list" >
       {list.map((item) => (
@@ -13,6 +13,7 @@ export const List = ({ list }) => {
           artists={item.artists}
           album={item.album.name}
           img={item.album.images}
+          label={label}
           >
           {item.label}
         </ListItem>

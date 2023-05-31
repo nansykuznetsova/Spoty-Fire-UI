@@ -14,10 +14,10 @@
   min-height: 30px;
 }
 
-.containerPrimary {
+.container-primary {
 }
 
-.containerSecondary {
+.container-secondary {
   flex-direction: column;
   height: 100%;
   overflow: hidden;

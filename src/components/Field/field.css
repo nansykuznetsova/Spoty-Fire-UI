@@ -5,7 +5,7 @@
   isolation: isolate;
 }
 
-.modeSearchBar {
+.mode-search-bar {
   left: 1px;
   width: 2.5rem;
   height: 2.5rem;
@@ -19,11 +19,11 @@
   pointer-events: none;
 }
 
-.iconWrapperHidden {
+.icon-wrapper-hidden {
   display: none;
 }
 
-.iconSearch {
+.icon-search {
   width: 1em;
   height: 1em;
   display: inline-block;
@@ -56,7 +56,7 @@
   outline: none;
 }
 
-.modeCloseIcon {
+.mode-close-icon {
   right: 1px;
   width: 2.5rem;
   height: 2.5rem;
