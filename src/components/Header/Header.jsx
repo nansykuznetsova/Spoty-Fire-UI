@@ -35,7 +35,7 @@ Header.propTypes = {
   }),
   logo: PropTypes.oneOfType([
     PropTypes.string,
-    PropTypes.elementType
+    PropTypes.object
   ]),
   onLogin: PropTypes.func.isRequired,
   onLogout: PropTypes.func.isRequired,
@@ -43,6 +43,7 @@ Header.propTypes = {
 
 Header.defaultProps = {
   user: null,
+  logo: null,
   onLogin: () => {},
   onLogout: () => {},
 };

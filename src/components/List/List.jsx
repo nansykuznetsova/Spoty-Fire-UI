@@ -24,8 +24,10 @@ export const List = ({ list, label }) => {
 
 List.propTypes = {
   list: PropTypes.array,
+  label: PropTypes.string,
 };
 
 List.defaultProps = {
   list: [],
+  label: "",
 };
