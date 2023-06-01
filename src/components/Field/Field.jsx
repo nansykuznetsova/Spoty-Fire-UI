@@ -28,23 +28,26 @@ export const Field = ({
     updateValue("");
   };
 
-  const modeSearchBar = searchBar ? "mode-search-bar" : "icon-wrapper-hidden";
-  const modeCloseIcon = value ? "mode-close-icon" : "icon-wrapper-hidden";
   return (
     <div className="search">
-      <div className={modeSearchBar}>
-        <SearchIcon className="icon-search" />
-      </div>
+      {searchBar && (
+        <div className="mode-search-bar">
+          <SearchIcon className="icon-search" />
+        </div>
+      )}
       <input
+        type="textbox"
         className="input"
         placeholder={label}
         onChange={handleChange}
         value={value}
         {...props}
       />
-      <button className={modeCloseIcon} onClick={handleClick}>
-        <CloseIcon />
-      </button>
+      {value && (
+        <button className="mode-close-icon" aria-label="Click to clear the field" onClick={handleClick}>
+          <CloseIcon />
+        </button>
+      )}
     </div>
   );
 };

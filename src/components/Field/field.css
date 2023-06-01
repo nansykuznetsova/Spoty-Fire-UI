@@ -19,10 +19,6 @@
   pointer-events: none;
 }
 
-.icon-wrapper-hidden {
-  display: none;
-}
-
 .icon-search {
   width: 1em;
   height: 1em;
