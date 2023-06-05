@@ -5,7 +5,7 @@ import '@testing-library/jest-dom'
 import { Button } from './Button';
 
 
-test('Should render the label text', async () => {
+test('should render the label text', () => {
   // 1. ARRANGE
   render(<Button label='Play' primary="primary" />);
 
@@ -13,7 +13,7 @@ test('Should render the label text', async () => {
   expect(screen.getByRole('button')).toHaveTextContent('Play')
 });
 
-test('Should call the on Click function', async () => {
+test('should call the on Click function', async () => {
   const onClick = jest.fn();
   // 1. ARRANGE
   render(<Button label="Play" variant="primary" onClick={onClick} />);

@@ -5,31 +5,31 @@ import ArrowCloseIcon from '../svg/ArrowCloseIcon';
 import ArrowOpenIcon from '../svg/ArrowOpenIcon';
 import CheckIcon from '../svg/CheckIcon';
 
-export const Select = ({ label, list, onChange }) => {
-  const [display, setDisplay] = React.useState("none");
+export const Select = ({ label, options, onChange }) => {
+  const [display, setDisplay] = React.useState(false);
   const [currentItem, setCurrentItem] = React.useState({ label });
   const [arrow, setArrow] = React.useState(false);
 
   React.useEffect(() => {
-    if (display === "none") {
-      setArrow(false);
+    if (display) {
+      setArrow(true);      
     } else {
-      setArrow(true);
+      setArrow(false);
     }
   }, [display])
 
   const handleClick = () => {
-    if (display === "none") {
-      setDisplay("block");
+    if (display) {
+      setDisplay(false);
     } else {
-      setDisplay("none");
+      setDisplay(true);
     }
   }
 
   const handleClickOption = (item) => {
     setCurrentItem({ ...item });
     onChange(item);
-    setDisplay("none");
+    setDisplay(false);
   }
 
   return (
@@ -44,32 +44,34 @@ export const Select = ({ label, list, onChange }) => {
           {arrow ? <ArrowOpenIcon /> : <ArrowCloseIcon />}
         </button>
       </div>
-      <ul className="options" style={{ display }}>
-        {list.map((item) => (
-          <li key={item.id} className="options-item">
-            <button 
-              type="button"
-              className={["options-button", (item.id === currentItem.id ? "options-button-current" : null)].join(" ")}
-              onClick={() => handleClickOption(item)}
-            >
-             {item.label}
-             {item.id === currentItem.id ? <CheckIcon /> : null}
-            </button>
-          </li>
-        ))}
-      </ul>
+      {display && (options.length)  &&
+        <ul className="options" role="list">
+          {options.map((item) => (
+            <li key={item.id} className="options-item">
+              <button 
+                type="button"
+                className={["options-button", (item.id === currentItem.id ? "options-button-current" : null)].join(" ")}
+                onClick={() => handleClickOption(item)}
+              >
+              {item.label}
+              {item.id === currentItem.id ? <CheckIcon /> : null}
+              </button>
+            </li>
+          ))}
+        </ul>
+      }
     </React.Fragment>
   );
 };
 
 Select.propTypes = {
   label: PropTypes.string.isRequired,
-  list: PropTypes.array,
+  options: PropTypes.array,
   onChange: PropTypes.func,
 };
 
 Select.defaultProps = {
   label: "",
-  list: [],
+  options: [],
   onChange: () => {},
 };
