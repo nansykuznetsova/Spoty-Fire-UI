@@ -9,7 +9,7 @@ export default {
 export const SelectTab = {
   args: {
     label: "Select",
-    list: [{
+    options: [{
       id: "name1",
       label: "name1",
       value: 1,
