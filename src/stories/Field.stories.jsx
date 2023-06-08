@@ -16,12 +16,13 @@ export default {
 export const Field = {
   args: {
     label: "Field",
+    type: "text",
   },
 };
 
 export const SearchBar = {
   args: {
     label: "Search",
-    searchBar: true,
+    type: "search",
   },
 };

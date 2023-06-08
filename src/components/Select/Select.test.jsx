@@ -19,7 +19,7 @@ describe('Select', () => {
     value: 3,
   }];
 
-  test('should render the label text and close icon', () => {
+  test('should render the label text and the close icon', () => {
     // 1. ARRANGE
     render(<Select label='Select' options={optionsMock} />);
   
@@ -36,10 +36,10 @@ describe('Select', () => {
     await userEvent.click(screen.getByText('Select'));
   
     // 3. ASSERT
-    expect(screen.getByRole('list')).toBeInTheDocument();
-    expect(screen.getByText('name1')).toBeInTheDocument();
-    expect(screen.getByText('name2')).toBeInTheDocument();
-    expect(screen.getByText('name3')).toBeInTheDocument();
+    expect(screen.getByRole('listbox')).toBeInTheDocument();
+    expect(screen.getByRole('option', {name: 'name1'})).toBeInTheDocument();
+    expect(screen.getByRole('option', {name: 'name2'})).toBeInTheDocument();
+    expect(screen.getByRole('option', {name: 'name3'})).toBeInTheDocument();
   });
   
   test('should hide option menu when click on the option item', async () => {
@@ -48,11 +48,11 @@ describe('Select', () => {
   
     // 2. ACT
     await userEvent.click(screen.getByText('Select'));
-    await userEvent.click(screen.getByText('name1'));
+    await userEvent.click(screen.getByRole('option', {name: 'name1'}));
   
     // 3. ASSERT
     expect(screen.queryByRole('list')).not.toBeInTheDocument();
-    expect(screen.getByText('name1')).toBeInTheDocument();
+    expect(screen.getByRole('option', {name: 'name1'})).toBeInTheDocument();
   });
 
   test('should render check icon', async () => {
@@ -61,10 +61,13 @@ describe('Select', () => {
   
     // 2. ACT
     await userEvent.click(screen.getByText('Select'));
-    await userEvent.click(screen.getByText('name2'));
-    await userEvent.click(screen.getByText('name2'));
-  
+    // selecting the option "name1"
+    await userEvent.click(screen.getByRole('button', {name: 'name1'}));
+    // reopening the select again
+    await userEvent.click(await screen.findByText('name1'));
+    
+    
     // 3. ASSERT
-    expect(screen.queryByTestId('check-icon')).toBeInTheDocument();
+      expect(screen.queryByTestId('check-icon')).toBeInTheDocument();
   });
 })

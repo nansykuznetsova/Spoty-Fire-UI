@@ -4,50 +4,60 @@ import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 import { Field } from './Field';
 
-test('should update input value when typing', () => {
-  // 1. ARRANGE
-  render(<Field label='Search' />);
+describe('Field', () => {
+  test('should update the input value when typing', () => {
+    // 1. ARRANGE
+    render(<Field />);
 
-  // 2. ACT
- userEvent.type(screen.getByPlaceholderText('Search'), 'Hello,World!')
-  
-  // 3. ASSERT
-  expect(screen.getByPlaceholderText('Search')).toHaveValue('Hello,World!')
-});
+    // 2. ACT
+    userEvent.type(screen.getByLabelText('Search'), 'Hello,World!')
+    
+    // 3. ASSERT
+    expect(screen.getByLabelText('Search')).toHaveValue('Hello,World!')
+  });
 
-test('should hide search icon depending of the searchBar prop', () => {
-  // 1. ARRANGE
-  render(<Field label='Search' />);
+  test('should hide the search icon depending of the type prop', () => {
+    // 1. ARRANGE
+    render(<Field type="text"/>);
 
-  // 3. ASSERT
-  expect(screen.queryByTestId('search-icon')).not.toBeInTheDocument();
-});
+    // 3. ASSERT
+    expect(screen.queryByTitle("search-icon")).not.toBeInTheDocument();
+  });
 
-test('should show search icon depending of the searchBar prop', () => {
-  // 1. ARRANGE
-  render(<Field label='Search' searchBar />);
+  test('should show the search icon depending of the type prop', () => {
+    // 1. ARRANGE
+    render(<Field type="search" />);
 
-  // 3. ASSERT
-  expect(screen.getByTestId('search-icon')).toBeInTheDocument();
-});
+    // 3. ASSERT
+    expect(screen.queryByTitle("search-icon")).toBeInTheDocument();
+  });
 
-test('should render Field with value', () => {
-  // 1. ARRANGE
-  render(<Field label='Search' value='test' />);
+  test('should show the input with value and the clear button', () => {
+    // 1. ARRANGE
+    render(<Field value='test' />);
 
-  // 3. ASSERT
-  expect(screen.getByPlaceholderText('Search')).toHaveValue('test')
-});
+    // 3. ASSERT
+    expect(screen.getByLabelText('Search')).toHaveValue('test');
+    expect(screen.queryByTitle("close-icon")).toBeInTheDocument();
+  });
 
+  test('should hide the clear button when there is not a value', async () => {
+    // 1. ARRANGE
+    render(<Field value='' />);
+    
+    // 3. ASSERT
+    expect(screen.queryByTitle('close-icon')).not.toBeInTheDocument();
+  });
 
-test('should clear the Field and remove CloseIcon', async () => {
-  // 1. ARRANGE
-  render(<Field label='Search' value='test' />);
+  test('should clear the input and remove the clear button', async () => {
+    // 1. ARRANGE
+    render(<Field value='test' />);
 
-  // 2. ACT
-  await userEvent.click(screen.getByLabelText('Click to clear the field'))
-  
-  // 3. ASSERT
-  expect(screen.getByPlaceholderText('Search')).toHaveValue('');
-  expect(screen.queryByTestId('close-icon')).not.toBeInTheDocument();
-});
+    // 2. ACT
+    await userEvent.click(screen.getByLabelText('Click to clear the field'))
+    
+    // 3. ASSERT
+    expect(screen.getByLabelText('Search')).toHaveValue('');
+    expect(screen.queryByTitle('close-icon')).not.toBeInTheDocument();
+  });
+})

@@ -45,9 +45,9 @@ export const Select = ({ label, options, onChange }) => {
         </button>
       </div>
       {display && (options.length)  &&
-        <ul className="options" role="list">
+        <ul className="options" role="listbox">
           {options.map((item) => (
-            <li key={item.id} className="options-item">
+            <li key={item.id} className="options-item" role="option">
               <button 
                 type="button"
                 className={["options-button", (item.id === currentItem.id ? "options-button-current" : null)].join(" ")}
