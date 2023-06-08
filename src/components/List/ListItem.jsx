@@ -8,24 +8,28 @@ export const ListItem = ({ label, title, artists, album, img, ...props }) => {
     <li className="list-item" {...props}>
       <div className="item">
         <img
-          aria-hidden="false" 
+          role="img" 
+          aria-label="Cover album image"
           draggable="false" 
           loading="eager" 
           src={img.url}
-          alt="" 
           width="40" 
           height="40"
           className="img-item"
         />
         <div className="name-item">
           {title}
-          <span>
+          <span title="artistsInfo">
             {artists.map((artist) => artist.name).join(", ")} | {album}
           </span>
         </div>
       </div>
       {label 
-        ? <Button label={label} variant="outlined" onClick={() => { console.log('Add item') }}/> 
+        ? <Button 
+            role="button"
+            label={label} 
+            variant="outlined" 
+            onClick={() => { console.log('Add item') }}/> 
         : null
       }
       

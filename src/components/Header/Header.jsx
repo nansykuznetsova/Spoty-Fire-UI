@@ -6,7 +6,7 @@ import './header.css';
 
 export const Header = ({ logo, user, onLogin, onLogout }) => (
   <header>
-    <div className="header">
+    <div className="header" >
       {typeof logo === "string" 
         ? (<h1  className="string-logo">{logo}</h1>)
         : <div className="logo">{logo}</div>
@@ -14,14 +14,22 @@ export const Header = ({ logo, user, onLogin, onLogout }) => (
       <div>
         {user ? (
           <>
-            <span className="welcome">
+            <span
+              title="Welcoming user"
+              className="welcome">
               Welcome, <b>{user.name}</b>!
             </span>
-            <Button onClick={onLogout} label="Log out" />
+            <Button 
+              onClick={onLogout} 
+              label="Log out"
+              type="button" />
           </>
         ) : (
           <>
-            <Button onClick={onLogin} label="Log in" />
+            <Button 
+              onClick={onLogin} 
+              label="Log in"
+              type="button" />
           </>
         )}
       </div>

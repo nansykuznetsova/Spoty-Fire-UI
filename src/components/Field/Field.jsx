@@ -5,7 +5,7 @@ import SearchIcon from "../svg/SearchIcon";
 import CloseIcon from "../svg/CloseIcon";
 
 export const Field = ({
-  searchBar,
+  type,
   label,
   value: initialValue,
   onChange,
@@ -30,14 +30,15 @@ export const Field = ({
 
   return (
     <div className="search">
-      {searchBar && (
+      {type === "search" && (
         <div className="mode-search-bar">
           <SearchIcon className="icon-search" />
         </div>
       )}
       <input
-        type="textbox"
+        type={type}
         className="input"
+        aria-label="Search"
         placeholder={label}
         onChange={handleChange}
         value={value}
@@ -55,13 +56,13 @@ export const Field = ({
 Field.propTypes = {
   label: PropTypes.string,
   value: PropTypes.string,
-  searchBar: PropTypes.bool,
+  type: PropTypes.string,
 };
 
 Field.defaultProps = {
   label: "",
   value: "",
-  searchBar: false,
+  type: "",
   onChange: () => {},
   onClick: () => {},
 };
