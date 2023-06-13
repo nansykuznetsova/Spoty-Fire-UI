@@ -4,9 +4,13 @@
   "description": "A simple react component collection",
   "main": "index.js",
   "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test",
+    "eject": "react-scripts eject",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "lint": "npx eslint ./src"
   },
   "repository": {
     "type": "git",
@@ -30,6 +34,9 @@
     "@storybook/testing-library": "^0.1.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
+    "eslint": "^8.42.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-react": "^7.32.2",
     "global-jsdom": "^9.0.1",
     "jsdom": "^22.1.0",
     "prop-types": "^15.8.1",
