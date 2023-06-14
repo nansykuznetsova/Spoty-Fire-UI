@@ -1,4 +1,4 @@
-name: Deploy React App
+name: Test React App
 on: 
   push:
     branches:
@@ -6,20 +6,6 @@ on:
     paths-ignore:
       - './github/workflows/*'
 jobs:
-  test:
-    runs-on: macos-latest
-    steps:
-      - name: Get repositiry code
-        uses: actions/checkout@v3
-      - name: Cache deps
-        uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: node-modules-${{ hashFiles('**/packadge-lock.json')}}
-      - name: Install dependencies
-        run: npm ci
-      - name: Test application
-        run: npm run test
   lint:
     runs-on: macos-latest
     steps:
@@ -34,7 +20,8 @@ jobs:
         run: npm ci
       - name: Lint application
         run: npm run lint
-  build:
+  test:
+    needs: lint
     runs-on: macos-latest
     steps:
       - name: Get repositiry code
@@ -46,7 +33,20 @@ jobs:
           key: node-modules-${{ hashFiles('**/packadge-lock.json')}}
       - name: Install dependencies
         run: npm ci
-      # - name: Build application
-      #   run: npm run build
-      - name: Deploy
-        run: echo Deploying...
+      - name: Test application
+        run: npm run test
+  # build:
+  #   runs-on: macos-latest
+  #   needs: [lint, test]
+  #   steps:
+  #     - name: Get repositiry code
+  #       uses: actions/checkout@v3
+  #     - name: Cache deps
+  #       uses: actions/cache@v3
+  #       with:
+  #         path: ~/.npm
+  #         key: node-modules-${{ hashFiles('**/packadge-lock.json')}}
+  #     - name: Install dependencies
+  #       run: npm ci
+  #     - name: Deploy
+  #       run: echo Deploying...

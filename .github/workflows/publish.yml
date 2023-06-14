@@ -1,0 +1,20 @@
+name: Publish React App
+on: 
+  push:
+    branches:
+      - main
+jobs:
+  publish:
+    runs-on: macos-latest
+    steps:
+      - name: Get repositiry code
+        uses: actions/checkout@v3
+      - name: node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          registry-url: https://registry.npmjs.org
+      - name: publish
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
