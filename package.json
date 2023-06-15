@@ -1,6 +1,6 @@
 {
   "name": "spoty-fire-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple react component collection",
   "main": "./dist/spoty-fire-ui.umd.js",
   "module": "./dist/spoty-fire-ui.es.js",
