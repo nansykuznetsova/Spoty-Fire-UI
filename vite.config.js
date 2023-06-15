@@ -24,4 +24,10 @@ export default defineConfig((configEnv) => ({
       external: [...Object.keys(packageJson.peerDependencies)],
     },
   },
+  test: {
+    environment: 'jsdom',
+    etupFiles: ['./tests/setup.js'],
+    testMatch: ['./tests/**/*.test.jsx'],
+    globals: true
+  }
 }))

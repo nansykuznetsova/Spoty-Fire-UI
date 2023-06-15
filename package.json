@@ -5,6 +5,7 @@
   "main": "./dist/spoty-fire-ui.umd.js",
   "module": "./dist/spoty-fire-ui.es.js",
   "scripts": {
+    "test": "vitest",
     "build": "vite build",
     "build-storybook": "storybook build",
     "format": "prettier --write src/**/*.{js,jsx,css} --config ./.prettierrc",
@@ -47,7 +48,8 @@
     "react-dom": "^18.2.0",
     "react-scripts": "^5.0.1",
     "storybook": "^7.0.12",
-    "vite-plugin-linter": "^2.0.2"
+    "vite-plugin-linter": "^2.0.2",
+    "vitest": "^0.32.0"
   },
   "peerDependencies": {
     "react": "^18.2.0",
