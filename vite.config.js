@@ -26,8 +26,8 @@ export default defineConfig((configEnv) => ({
   },
   test: {
     environment: 'jsdom',
-    etupFiles: ['./tests/setup.js'],
+    setupFiles: ['./tests/setup.js'],
     testMatch: ['./tests/**/*.test.jsx'],
-    globals: true
-  }
+    globals: true,
+  },
 }))
