@@ -1,20 +1,20 @@
-import { Box } from "../components/Box/Box";
+import { Box } from '../components/Box/Box'
 
 export default {
-  title: "Box",
+  title: 'Box',
   component: Box,
   tags: ['autodocs'],
-};
+}
 
 export const FlexPrimary = {
   args: {
-    label: "FlexPrimary",
+    label: 'FlexPrimary',
     primary: true,
   },
-};
+}
 
 export const FlexSecondary = {
   args: {
-    label: "FlexSecondary",
+    label: 'FlexSecondary',
   },
-};
+}

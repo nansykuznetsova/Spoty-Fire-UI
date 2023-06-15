@@ -2,15 +2,16 @@
   "name": "spoty-fire-ui",
   "version": "1.0.0",
   "description": "A simple react component collection",
-  "main": "index.js",
+  "main": "./dist/spoty-fire-ui.umd.js",
+  "module": "./dist/spoty-fire-ui.es.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "storybook": "storybook dev -p 6006",
+    "build": "vite build",
     "build-storybook": "storybook build",
-    "lint": "npx eslint ./src"
+    "format": "prettier --write src/**/*.{js,jsx,css} --config ./.prettierrc",
+    "lint:fix": "eslint --fix 'src/**/*.{jsx,js}'",
+    "lint": "eslint 'src/**/*.{js,jsx}'",
+    "storybook": "storybook dev -p 6006",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -38,15 +39,39 @@
     "eslint-config-react-app": "^7.0.1",
     "eslint-plugin-react": "^7.32.2",
     "global-jsdom": "^9.0.1",
+    "husky": "^8.0.3",
     "jsdom": "^22.1.0",
+    "lint-staged": "^13.2.2",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "^5.0.1",
-    "storybook": "^7.0.12"
+    "storybook": "^7.0.12",
+    "vite-plugin-linter": "^2.0.2"
   },
   "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx}": [
+      "npm run format",
+      "npm run lint:fix"
+    ]
+  },
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/spoty-fire-ui.es.js",
+      "require": "./dist/spoty-fire-ui.umd.js"
+    },
+    "./dist/style.css": "./dist/style.css"
   }
 }

@@ -1,7 +1,6 @@
 .button {
-  font-family: CircularSp, CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl,
-    CircularSp-Grek, CircularSp-Deva, var(--fallback-fonts, sans-serif),
-    sans-serif;
+  font-family: CircularSp, CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek,
+    CircularSp-Deva, var(--fallback-fonts, sans-serif), sans-serif;
   font-weight: 700;
   border: 0;
   border-radius: 500px;
