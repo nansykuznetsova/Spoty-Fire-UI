@@ -1,6 +1,6 @@
 import { Header } from '../components/Header/Header'
-import SpotifyLogo from '../components/svg/SpotifyLogo'
-import SpotifyLogoText from '../components/svg/SpotifyLogoText'
+import SpotifyLogo from '../svg/SpotifyLogo'
+import SpotifyLogoText from '../svg/SpotifyLogoText'
 
 export default {
   title: 'Header',
