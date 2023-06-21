@@ -5,7 +5,7 @@
   isolation: isolate;
 }
 
-.mode-search-bar {
+.modeSearchBar {
   left: 1px;
   width: 2.5rem;
   height: 2.5rem;
@@ -19,7 +19,7 @@
   pointer-events: none;
 }
 
-.icon-search {
+.iconSearch {
   width: 1em;
   height: 1em;
   display: inline-block;
@@ -59,7 +59,7 @@ input[type='search']::-webkit-search-results-decoration {
   outline: none;
 }
 
-.mode-close-icon {
+.modeCloseIcon {
   right: 1px;
   width: 2.5rem;
   height: 2.5rem;

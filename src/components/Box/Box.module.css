@@ -9,15 +9,11 @@
   border-radius: 8px;
   cursor: default;
   display: flex;
-  width: 100%;
   color: #a7a7a7;
   min-height: 30px;
 }
 
-.container-primary {
-}
-
-.container-secondary {
+.containerSecondary {
   flex-direction: column;
   height: 100%;
   overflow: hidden;

@@ -9,12 +9,12 @@
   border-radius: 8px;
 }
 
-.header .logo {
+.logo {
   display: flex;
   height: 32px;
 }
 
-.header .string-logo {
+.stringLogo {
   font-weight: 700;
   font-size: 20px;
   line-height: 1;
@@ -24,7 +24,7 @@
   color: #1ed760;
 }
 
-.header .welcome {
+.welcome {
   color: #fff;
   font-size: 14px;
   margin-right: 10px;

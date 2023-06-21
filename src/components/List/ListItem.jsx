@@ -1,38 +1,39 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import './list.css';
-import { Button } from '../Button/Button';
+import React from 'react'
+import PropTypes from 'prop-types'
+import styles from './List.module.css'
+import { Button } from '../Button/Button'
 
 export const ListItem = ({ label, title, artists, album, img, ...props }) => {
   return (
-    <li className="list-item" {...props}>
-      <div className="item">
+    <li className={styles.listItem} {...props}>
+      <div className={styles.item}>
         <img
-          role="img" 
+          role="img"
           aria-label="Cover album image"
-          draggable="false" 
-          loading="eager" 
+          draggable="false"
+          loading="eager"
           src={img.url}
-          width="40" 
+          width="40"
           height="40"
-          className="img-item"
+          className={styles.imgItem}
         />
-        <div className="name-item">
+        <div className={styles.nameItem}>
           {title}
-          <span title="artistsInfo">
-            {artists.map((artist) => artist.name).join(", ")} | {album}
+          <span title="artistsInfo" className={styles.spanColor}>
+            {artists.map((artist) => artist.name).join(', ')} | {album}
           </span>
         </div>
       </div>
-      {label 
-        ? <Button 
-            role="button"
-            label={label} 
-            variant="outlined" 
-            onClick={() => { console.log('Add item') }}/> 
-        : null
-      }
-      
+      {label ? (
+        <Button
+          role="button"
+          label={label}
+          variant="outlined"
+          onClick={() => {
+            console.log('Add item')
+          }}
+        />
+      ) : null}
     </li>
   )
 }
@@ -44,12 +45,12 @@ ListItem.propTypes = {
   album: PropTypes.string,
   img: PropTypes.object,
   onClick: PropTypes.func,
-};
+}
 
 ListItem.defaultProps = {
-  title: "",
+  title: '',
   artists: [],
-  album: "",
+  album: '',
   img: {},
   onClick: () => {},
-};
+}

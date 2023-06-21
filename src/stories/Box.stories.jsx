@@ -16,5 +16,6 @@ export const FlexPrimary = {
 export const FlexSecondary = {
   args: {
     label: 'FlexSecondary',
+    primary: false,
   },
 }
