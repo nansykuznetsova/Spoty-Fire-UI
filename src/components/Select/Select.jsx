@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import './select.css'
-import ArrowCloseIcon from '../../svg/ArrowCloseIcon'
-import ArrowOpenIcon from '../../svg/ArrowOpenIcon'
-import CheckIcon from '../../svg/CheckIcon'
+import styles from './Select.module.css'
+import ArrowCloseIcon from '../../../public/svg/ArrowCloseIcon'
+import ArrowOpenIcon from '../../../public/svg/ArrowOpenIcon'
+import CheckIcon from '../../../public/svg/CheckIcon'
 
 export const Select = ({ label, options, onChange }) => {
   const [display, setDisplay] = React.useState(false)
@@ -34,21 +34,26 @@ export const Select = ({ label, options, onChange }) => {
 
   return (
     <React.Fragment>
-      <div className="select-tab">
-        <button type="button" className="button-select" onClick={handleClick}>
+      <div className={styles.selectTab}>
+        <button type="button" className={styles.buttonSelect} onClick={handleClick}>
           {currentItem.label}
           {arrow ? <ArrowOpenIcon /> : <ArrowCloseIcon />}
         </button>
       </div>
       {display && options.length && (
-        <ul className="options" role="listbox">
+        <ul className={styles.select} role="listbox">
           {options.map((item) => (
-            <li key={item.id} className="options-item" role="option">
+            <li
+              key={item.id}
+              className={styles.option}
+              role="option"
+              aria-selected={item.id === currentItem.id}
+            >
               <button
                 type="button"
                 className={[
-                  'options-button',
-                  item.id === currentItem.id ? 'options-button-current' : null,
+                  styles.optionsButton,
+                  item.id === currentItem.id ? styles.optionsButtonCurrent : null,
                 ].join(' ')}
                 onClick={() => handleClickOption(item)}
               >

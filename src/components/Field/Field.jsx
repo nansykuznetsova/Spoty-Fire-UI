@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import './field.css'
-import SearchIcon from '../../svg/SearchIcon'
-import CloseIcon from '../../svg/CloseIcon'
+import styles from './Field.module.css'
+import SearchIcon from '../../../public/svg/SearchIcon'
+import CloseIcon from '../../../public/svg/CloseIcon'
 
 export const Field = ({ type, label, value: initialValue, onChange, ...props }) => {
   const [value, setValue] = React.useState(initialValue)
@@ -23,15 +23,15 @@ export const Field = ({ type, label, value: initialValue, onChange, ...props }) 
   }
 
   return (
-    <div className="search">
+    <div className={styles.search}>
       {type === 'search' && (
-        <div className="mode-search-bar">
-          <SearchIcon className="icon-search" />
+        <div className={styles.modeSearchBar}>
+          <SearchIcon className={styles.iconSearch} />
         </div>
       )}
       <input
         type={type}
-        className="input"
+        className={styles.input}
         aria-label="Search"
         placeholder={label}
         onChange={handleChange}
@@ -40,7 +40,7 @@ export const Field = ({ type, label, value: initialValue, onChange, ...props }) 
       />
       {value && (
         <button
-          className="mode-close-icon"
+          className={styles.modeCloseIcon}
           aria-label="Click to clear the field"
           onClick={handleClick}
         >

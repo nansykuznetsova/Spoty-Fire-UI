@@ -2,7 +2,7 @@ import React from 'react'
 import { describe, it, expect } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import { Header } from './Header'
-import SpotifyLogo from '../../svg/SpotifyLogo'
+import SpotifyLogo from '../../../public/svg/SpotifyLogo'
 
 describe('Header', () => {
   const customLogo = <SpotifyLogo />
