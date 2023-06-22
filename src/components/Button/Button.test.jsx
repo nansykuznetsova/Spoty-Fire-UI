@@ -1,5 +1,4 @@
 import React from 'react'
-import { describe, it, expect, vi } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { Button } from './Button'
@@ -14,7 +13,7 @@ describe('Button', () => {
   })
 
   it('should call the on Click function', async () => {
-    const onClick = vi.fn()
+    const onClick = jest.fn()
     // 1. ARRANGE
     render(<Button label="Play" variant="primary" onClick={onClick} />)
 
