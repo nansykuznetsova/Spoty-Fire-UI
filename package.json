@@ -2,11 +2,10 @@
   "name": "spoty-fire-ui",
   "version": "1.0.5",
   "description": "A simple react component collection",
-  "main": "./dist/spoty-fire-ui.umd.js",
-  "module": "./dist/spoty-fire-ui.es.js",
+  "main": "./build/src/index.js",
   "scripts": {
-    "test": "vitest",
-    "build": "vite build",
+    "test": "jest",
+    "build": "rollup -c",
     "build-storybook": "storybook build",
     "format": "prettier --write src/**/*.{js,jsx,css} --config ./.prettierrc",
     "lint:fix": "eslint --fix 'src/**/*.{jsx,js}'",
@@ -27,6 +26,7 @@
   "devDependencies": {
     "@babel/preset-env": "^7.22.4",
     "@babel/preset-react": "^7.22.3",
+    "@rollup/plugin-node-resolve": "^15.1.0",
     "@storybook/addon-essentials": "^7.0.12",
     "@storybook/addon-interactions": "^7.0.12",
     "@storybook/addon-links": "^7.0.12",
@@ -36,6 +36,7 @@
     "@storybook/testing-library": "^0.1.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
+    "autoprefixer": "^10.4.14",
     "eslint": "^8.42.0",
     "eslint-config-react-app": "^7.0.1",
     "eslint-plugin-react": "^7.32.2",
@@ -47,10 +48,11 @@
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "storybook": "^7.0.12",
-    "vite-plugin-css-modules": "^0.0.1",
-    "vite-plugin-linter": "^2.0.2",
-    "vitest": "^0.32.0"
+    "rollup": "^2.79.1",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "storybook": "^7.0.12"
   },
   "peerDependencies": {
     "react": "^18.2.0",
@@ -68,13 +70,6 @@
     ]
   },
   "files": [
-    "dist"
-  ],
-  "exports": {
-    ".": {
-      "import": "./dist/spoty-fire-ui.es.js",
-      "require": "./dist/spoty-fire-ui.umd.js"
-    },
-    "./dist/style.css": "./dist/style.css"
-  }
+    "build"
+  ]
 }
