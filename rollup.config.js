@@ -1,8 +1,9 @@
 import autoprefixer from 'autoprefixer';
 import babel from 'rollup-plugin-babel';
-import { terser } from 'rollup-plugin-terser';
 import postcss from 'rollup-plugin-postcss';
+import rename from 'rollup-plugin-rename';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
+import { terser } from 'rollup-plugin-terser';
 
 import pkg from './package.json';
 
@@ -12,8 +13,7 @@ export default [
     input: './src/index.js',
     output: [
       {
-        name: 'spoty-fire-ui',
-        dir: './build',
+        dir: './dist',
         format: 'es',
       }
     ],
@@ -30,10 +30,21 @@ export default [
       }),
       postcss({
         plugins: [autoprefixer()],
-        sourceMap: true,
         minimize: true
       }),
-      terser() // minifies generated bundles
+      terser(), // minifies generated bundles
+      rename({
+        include: 'src/index.js',
+        map: (name) => name.replace('src', '.'),
+      }),
+      rename({
+        include: ['**/*.js', '**/*.jsx', '**/*.css'],
+        map: (name) => name.replace('src/components', 'components'),
+      }),
+      rename({
+        include: 'public/**/*.jsx',
+        map: (name) => name.replace('public/svg', 'svg'),
+      })
     ]
   }
 ];
