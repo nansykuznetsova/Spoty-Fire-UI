@@ -2,12 +2,7 @@
   "name": "spoty-fire-ui",
   "version": "1.0.9",
   "description": "A simple react component collection",
-  "browser": "dist/index.js",
-  "paths": {
-    "components/**/*": [
-      "components/*"
-    ]
-  },
+  "main": "dist/index.js",
   "scripts": {
     "test": "jest --silent",
     "build": "rollup -c",
