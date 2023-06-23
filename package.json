@@ -3,9 +3,6 @@
   "version": "1.0.7",
   "description": "A simple react component collection",
   "browser": "dist/index.js",
-  "paths": {
-    "components/**/*": ["components/*"]
-  },
   "scripts": {
     "test": "jest --silent",
     "build": "rollup -c",
