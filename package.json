@@ -1,6 +1,6 @@
 {
   "name": "spoty-fire-ui",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A simple react component collection",
   "main": "build/index.js",
   "scripts": {
