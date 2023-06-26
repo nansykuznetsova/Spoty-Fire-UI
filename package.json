@@ -24,7 +24,8 @@
   },
   "homepage": "https://github.com/nansykuznetsova/Spoty-Fire-UI#readme",
   "dependencies": {
-    "@babel/runtime": "^7.22.5"
+    "@babel/runtime": "^7.22.5",
+    "style-inject": "^0.3.0"
   },
   "devDependencies": {
     "@babel/plugin-transform-runtime": "^7.22.5",
