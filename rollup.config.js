@@ -1,5 +1,5 @@
 import autoprefixer from 'autoprefixer';
-import babel from 'rollup-plugin-babel';
+import { babel } from '@rollup/plugin-babel';
 import postcss from 'rollup-plugin-postcss';
 import rename from 'rollup-plugin-rename';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
@@ -19,14 +19,16 @@ export default [
     ],
     external: [
       ...Object.keys(pkg.peerDependencies || {}),
-      ...Object.keys(pkg.devDependencies || {})
+      ...Object.keys(pkg.devDependencies || {}),
+      /@babel\/runtime/
     ],
     plugins: [
       nodeResolve({
         extensions: ['.js',  '.jsx', '.css']
       }),
       babel({
-        exclude: 'node_modules/**'
+        babelHelpers: 'runtime',
+        exclude: 'node_modules/**',
       }),
       postcss({
         plugins: [autoprefixer()],
