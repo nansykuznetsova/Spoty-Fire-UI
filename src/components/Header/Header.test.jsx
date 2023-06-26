@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import { Header } from './Header'
-import SpotifyLogo from '../../../public/svg/SpotifyLogo'
+import SpotifyLogo from '../../svg/SpotifyLogo'
 
 describe('Header', () => {
   const customLogo = <SpotifyLogo />

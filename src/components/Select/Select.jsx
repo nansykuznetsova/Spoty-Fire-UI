@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './Select.module.css'
-import ArrowCloseIcon from '../../../public/svg/ArrowCloseIcon'
-import ArrowOpenIcon from '../../../public/svg/ArrowOpenIcon'
-import CheckIcon from '../../../public/svg/CheckIcon'
+import ArrowCloseIcon from '../../svg/ArrowCloseIcon'
+import ArrowOpenIcon from '../../svg/ArrowOpenIcon'
+import CheckIcon from '../../svg/CheckIcon'
 
 export const Select = ({ label, options, onChange }) => {
   const [display, setDisplay] = React.useState(false)

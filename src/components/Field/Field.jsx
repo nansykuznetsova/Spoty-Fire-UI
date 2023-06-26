@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './Field.module.css'
-import SearchIcon from '../../../public/svg/SearchIcon'
-import CloseIcon from '../../../public/svg/CloseIcon'
+import SearchIcon from '../../svg/SearchIcon'
+import CloseIcon from '../../svg/CloseIcon'
 
 export const Field = ({ type, label, value: initialValue, onChange, ...props }) => {
   const [value, setValue] = React.useState(initialValue)
