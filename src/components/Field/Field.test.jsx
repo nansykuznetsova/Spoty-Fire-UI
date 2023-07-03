@@ -4,12 +4,13 @@ import userEvent from '@testing-library/user-event'
 import { Field } from './Field'
 
 describe('Field', () => {
-  it('should update the input value when typing', () => {
+  it('should update the input value when typing', async () => {
     // 1. ARRANGE
-    render(<Field />)
+    render(<Field label="Search" />)
 
     // 2. ACT
-    userEvent.type(screen.getByLabelText('Search'), 'Hello,World!')
+
+    await userEvent.type(screen.getByLabelText('Search'), 'Hello,World!')
 
     // 3. ASSERT
     expect(screen.getByLabelText('Search')).toHaveValue('Hello,World!')
