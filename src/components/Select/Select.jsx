@@ -7,7 +7,7 @@ import CheckIcon from '../../svg/CheckIcon'
 
 export const Select = ({ label, options, onChange }) => {
   const [display, setDisplay] = React.useState(false)
-  const [currentItem, setCurrentItem] = React.useState({ label })
+  const [currentItem, setCurrentItem] = React.useState({})
   const [arrow, setArrow] = React.useState(false)
 
   React.useEffect(() => {
@@ -36,7 +36,7 @@ export const Select = ({ label, options, onChange }) => {
     <React.Fragment>
       <div className={styles.selectTab}>
         <button type="button" className={styles.buttonSelect} onClick={handleClick}>
-          {currentItem.name}
+          {currentItem.name || label}
           {arrow ? <ArrowOpenIcon /> : <ArrowCloseIcon />}
         </button>
       </div>
@@ -57,7 +57,7 @@ export const Select = ({ label, options, onChange }) => {
                 ].join(' ')}
                 onClick={() => handleClickOption(item)}
               >
-                {item.label}
+                {item.name}
                 {item.id === currentItem.id ? <CheckIcon /> : null}
               </button>
             </li>
