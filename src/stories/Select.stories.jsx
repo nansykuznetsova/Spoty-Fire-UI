@@ -12,20 +12,18 @@ export const SelectTab = {
     options: [
       {
         id: 'name1',
-        label: 'name1',
-        value: 1,
+        name: 'name1',
       },
       {
         id: 'name2',
-        label: 'name2',
-        value: 2,
+        name: 'name2',
       },
       {
         id: 'name3',
-        label: 'name3',
-        value: 3,
+        name: 'name3',
       },
     ],
+
     onChange: (item) => {
       console.log(item.value)
     },

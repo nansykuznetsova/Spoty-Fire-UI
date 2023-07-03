@@ -36,7 +36,7 @@ export const Select = ({ label, options, onChange }) => {
     <React.Fragment>
       <div className={styles.selectTab}>
         <button type="button" className={styles.buttonSelect} onClick={handleClick}>
-          {currentItem.label}
+          {currentItem.name}
           {arrow ? <ArrowOpenIcon /> : <ArrowCloseIcon />}
         </button>
       </div>
