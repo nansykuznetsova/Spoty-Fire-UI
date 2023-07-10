@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 import styles from './List.module.css'
 import { Button } from '../Button/Button'
 
-export const ListItem = ({ label, title, artists, album, img, ...props }) => {
+export const ListItem = ({ item, label, title, artists, album, img, onClick }) => {
   return (
-    <li className={styles.listItem} {...props}>
+    <li className={styles.listItem}>
       <div className={styles.item}>
         <img
           role="img"
@@ -30,7 +30,7 @@ export const ListItem = ({ label, title, artists, album, img, ...props }) => {
           label={label}
           variant="outlined"
           onClick={() => {
-            console.log('Add item')
+            onClick(item)
           }}
         />
       ) : null}
