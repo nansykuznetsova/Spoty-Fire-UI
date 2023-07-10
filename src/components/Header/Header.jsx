@@ -4,9 +4,9 @@ import PropTypes from 'prop-types'
 import { Button } from '../Button/Button'
 import styles from './Header.module.css'
 
-export const Header = ({ logo, user, onLogin, onLogout }) => (
+export const Header = ({ logo, user, onLogin, onLogout, ...props }) => (
   <header>
-    <div className={styles.header}>
+    <div className={styles.header} {...props}>
       {typeof logo === 'string' ? (
         <h1 className={styles.stringLogo}>{logo}</h1>
       ) : (

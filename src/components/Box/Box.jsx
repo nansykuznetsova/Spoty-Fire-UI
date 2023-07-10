@@ -1,15 +1,15 @@
 import React from 'react'
-import PropTypes, { bool } from 'prop-types'
+import PropTypes from 'prop-types'
 import styles from './Box.module.css'
 
-export const Box = ({ backgroundColor, primary, label, ...props }) => {
+export const Box = ({ backgroundColor, primary, ...props }) => {
   return (
     <div
       className={[styles.container, !primary ? styles.containerSecondary : null].join(' ')}
       style={backgroundColor && { backgroundColor }}
       {...props}
     >
-      {label}
+      {props.children}
     </div>
   )
 }

@@ -23,7 +23,7 @@ export const Field = ({ type, label, value: initialValue, onChange, ...props }) 
   }
 
   return (
-    <div className={styles.search}>
+    <div className={styles.search} {...props}>
       {type === 'search' && (
         <div className={styles.modeSearchBar}>
           <SearchIcon className={styles.iconSearch} />
@@ -36,7 +36,6 @@ export const Field = ({ type, label, value: initialValue, onChange, ...props }) 
         placeholder={label}
         onChange={handleChange}
         value={value}
-        {...props}
       />
       {value && (
         <button

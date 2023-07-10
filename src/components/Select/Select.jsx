@@ -5,7 +5,7 @@ import ArrowCloseIcon from '../../svg/ArrowCloseIcon'
 import ArrowOpenIcon from '../../svg/ArrowOpenIcon'
 import CheckIcon from '../../svg/CheckIcon'
 
-export const Select = ({ label, options, onChange }) => {
+export const Select = ({ label, options, onChange, ...props }) => {
   const [display, setDisplay] = React.useState(false)
   const [currentItem, setCurrentItem] = React.useState({})
   const [arrow, setArrow] = React.useState(false)
@@ -34,7 +34,7 @@ export const Select = ({ label, options, onChange }) => {
 
   return (
     <React.Fragment>
-      <div className={styles.selectTab}>
+      <div className={styles.selectTab} {...props}>
         <button type="button" className={styles.buttonSelect} onClick={handleClick}>
           {currentItem.name || label}
           {arrow ? <ArrowOpenIcon /> : <ArrowCloseIcon />}
