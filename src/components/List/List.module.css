@@ -4,6 +4,7 @@
   list-style-type: none;
   box-sizing: border-box;
   color: #fff;
+  width: 100%;
 }
 
 .listItem {
