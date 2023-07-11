@@ -62,13 +62,12 @@ input[type='search']::-webkit-search-results-decoration {
 .modeCloseIcon {
   right: 1px;
   width: 2.5rem;
-  height: 2.5rem;
+  height: 100%;
   font-size: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 4px;
   z-index: 2;
   background: transparent;
   border: none;
