@@ -1,9 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './List.module.css'
-import { Button } from '../Button/Button'
+import { Button } from '../Button'
 
-export const ListItem = ({ item, label, title, artists, album, img, onClick }) => {
+export const ListItem = (props) => {
+  const { actionLabel, album, artists, img, item, onClick, title } = props
+  const handleClick = () => {
+    if (onClick) {
+      onClick(item)
+    }
+  }
+
   return (
     <li className={styles.listItem}>
       <div className={styles.item}>
@@ -24,22 +31,15 @@ export const ListItem = ({ item, label, title, artists, album, img, onClick }) =
           </span>
         </div>
       </div>
-      {label ? (
-        <Button
-          role="button"
-          label={label}
-          variant="outlined"
-          onClick={() => {
-            onClick(item)
-          }}
-        />
+      {actionLabel ? (
+        <Button role="button" label={actionLabel} variant="outlined" onClick={handleClick} />
       ) : null}
     </li>
   )
 }
 
 ListItem.propTypes = {
-  label: PropTypes.string,
+  actionLabel: PropTypes.string,
   title: PropTypes.string,
   artists: PropTypes.array,
   album: PropTypes.string,
