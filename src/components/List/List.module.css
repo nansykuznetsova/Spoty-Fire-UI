@@ -8,10 +8,9 @@
 }
 
 .listItem {
-  margin: 0;
-  padding: 0 16px;
+  margin: 0.5rem 0;
+  padding: 0.5rem 1rem;
   border: 1px solid transparent;
-  height: 56px;
   position: relative;
   display: flex;
   align-items: center;
