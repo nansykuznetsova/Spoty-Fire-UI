@@ -1,0 +1,18 @@
+.alert {
+  border: 0;
+  margin: 0;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  vertical-align: baseline;
+  align-items: center;
+  background-color: #1d75de;
+  border-radius: 8px;
+  cursor: default;
+  display: flex;
+  color: #ffffff;
+  justify-content: center;
+}
+.alertError {
+  background-color: #de261d;
+}
